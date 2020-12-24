@@ -1,0 +1,13 @@
+{
+  "name": "2m2o",
+  "version": "1.0",
+  "description": "Status 2m2o bot",
+  "main": "2m2o.js",
+  "dependencies": {
+    "discord.js": "^11.5.0",
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
