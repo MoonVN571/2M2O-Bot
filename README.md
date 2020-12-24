@@ -1,2 +1,2 @@
 # 2m2o
-2M2O Bot
+Bot coded by Moonz#0001
