@@ -29,4 +29,4 @@ client.on("message", message => {
 
 client.on("error", (e) => console.error(e));
 
-client.login("Nzg0NzU4NzkxNjY0MzA0MTM4.X8t9lA.MgxhM9ljkH5a2tMP09MJsu6uuDE");
+client.login("<YOUR TOKEN>");
