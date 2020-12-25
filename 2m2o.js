@@ -45,7 +45,7 @@ client.on("message", message => {
 
 						setTimeout(function(){
 							message.delete();
-						}, 3000);// 30 secon ds
+						}, 30000);// 30 secon ds
 
 					}
 			// too
@@ -54,7 +54,7 @@ client.on("message", message => {
 					// Timing
 					setTimeout(function(){
 						message.delete();
-					}, 3000); // 30 seconds
+					}, 30000); // 30 seconds
 
 				}
 
