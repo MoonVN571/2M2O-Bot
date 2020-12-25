@@ -41,8 +41,6 @@ client.on("message", message => {
 			  // delete message on cats, ,s
 					if(command === "cats") {
 						// Timing
-						console.log("working 1")
-
 						setTimeout(function(){
 							message.delete();
 						}, 30000);// 30 secon ds
@@ -50,7 +48,6 @@ client.on("message", message => {
 					}
 			// too
 				if(command === ",s") {
-					console.log("working")
 					// Timing
 					setTimeout(function(){
 						message.delete();
