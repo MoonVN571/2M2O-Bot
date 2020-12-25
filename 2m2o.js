@@ -77,6 +77,8 @@ client.on("message", message => {
 
 });
 
+// Log error
 client.on("error", (e) => console.error(e));
 
+// On login bot
 client.login("<YOUR TOKEN>");
