@@ -1,6 +1,6 @@
 # 2m2o
-Bot coded by Moonz#0001
-A Bot for minecraft but it is status bot
+- Bot coded by Moonz#0001
+- A Bot for minecraft but it is status bot
 
 # Changelog
 25/12/2020
