@@ -59,7 +59,7 @@ client.on("message", message => {
 						// Timing
 						setTimeout(function(){
 							message.delete();
-						}, 30000);// 30 secon ds
+						}, 30000);// 30 seconds
 
 					}
 			// too
