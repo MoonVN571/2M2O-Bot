@@ -7,7 +7,7 @@ client.on('ready', () => {
 	client.user.setPresence({
 		status: "online",
 		game: {
-		name: "STARTING",
+		name: "RESTARTING",
 		type: "PLAYING"
 		}
 	});
@@ -36,7 +36,23 @@ client.on("message", message => {
 		  const command = args.shift().toLowerCase();
 				// Check guild
 				const guild = message.guild.id === '783647633457020969';
+		
+		// On bot ping
+		if(message.isMentioned(client.user)) {
 
+			const embed = new Discord.RichEmbed()
+									.setColor(0x000DFF)
+									.setTitle('[Bot Command]')
+									.setDescription('Không có bất kì lệnh bổ sung nào.')
+									.setFooter("Dev by Moonz#0001")
+									.setTimestamp();
+
+			message.channel.send(embed).then(msg => {
+				msg.delete(10000);
+			});
+
+		}
+			
 		if(!guild) return;
 			  // delete message on cats, ,s
 					if(command === "cats") {
@@ -55,21 +71,7 @@ client.on("message", message => {
 
 				}
 
-			// On bot ping
-			if(message.isMentioned(client.user)) {
 
-				const embed = new Discord.RichEmbed()
-										.setColor(0x000DFF)
-										.setTitle('[Bot Command]')
-										.setDescription('Không có bất kì lệnh bổ sung nào.')
-										.setFooter("Dev by Moonz#0001")
-										.setTimestamp();
-
-				message.channel.send(embed).then(message => {
-					message.delete(10000);
-				});
-
-			}
 
 
 });
@@ -78,4 +80,4 @@ client.on("message", message => {
 client.on("error", (e) => console.error(e));
 
 // On login bot
-client.login("<YOUR TOKEN>");
+client.login("Nzg0NzU4NzkxNjY0MzA0MTM4.X8t9lA.5As-Q_AvDZAxcOF2pT38oCxOCR4");
