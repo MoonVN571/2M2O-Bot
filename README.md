@@ -3,6 +3,6 @@
 - A Bot for minecraft but it is status bot
 
 # Changelog
-- Forked from foundation bot
+- Forked from revolution bot
 - Auto delete command every 30 seconds
 - Fixing error when ping bot
