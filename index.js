@@ -80,4 +80,4 @@ client.on("message", message => {
 client.on("error", (e) => console.error(e));
 
 // On login bot
-client.login("Nzg0NzU4NzkxNjY0MzA0MTM4.X8t9lA.5As-Q_AvDZAxcOF2pT38oCxOCR4");
+client.login("<YOUR TOKEN>");
