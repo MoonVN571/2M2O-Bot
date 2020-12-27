@@ -1,4 +1,4 @@
-# 2m2o
+# 2M2O-Bot
 - Bot coded by Moonz#0001
 - A Bot for minecraft but it is status bot
 
