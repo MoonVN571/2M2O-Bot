@@ -1,15 +1,25 @@
+// 2M2O
+
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
+const token = require('dotenv').config();
+
+const prefix = "$";
+
+const config = {
+  token: process.env.token
+};
+
 client.on('ready', () => {
-		console.log('Bot is online!');
+	console.log('Bot is online!');
 
 	client.user.setPresence({
 		status: "online",
-		game: {
-		name: "RESTARTING",
-		type: "PLAYING"
-		}
+			game: {
+			name: "RESTARTING",
+			type: "PLAYING"
+			}
 	});
 
 });
@@ -31,14 +41,30 @@ client.on("message", message => {
 		let botChat  = client.channels.get('783648498876022814');
 		let otherChat  = client.channels.get('783648482862301184');
 
-			// Constant
-		  const args = message.content.slice('').trim().split(/ +/g);
-		  const command = args.shift().toLowerCase();
-				// Check guild
-				const guild = message.guild.id === '783647633457020969';
-		
+		// Constructor
+		const args = message.content.slice('').trim().split(/ +/g);
+		const command = args.shift().toLowerCase();
+
+		// Check guild
+		const guild = message.guild.id === '783647633457020969';
+
 		// On bot ping
 		if(message.isMentioned(client.user)) {
+
+			const embed = new Discord.RichEmbed()
+									.setColor(0x000DFF)
+									.setTitle('[Bot Command]')
+									.setDescription('Prefix mặt định là ' + prefix)
+									.setFooter("Dev by Moonz#0001")
+									.setTimestamp();
+
+			message.channel.send(embed).then(message => {
+				message.delete(10000);
+			});
+
+		}
+
+		if(command === "help") {
 
 			const embed = new Discord.RichEmbed()
 									.setColor(0x000DFF)
@@ -47,32 +73,30 @@ client.on("message", message => {
 									.setFooter("Dev by Moonz#0001")
 									.setTimestamp();
 
-			message.channel.send(embed).then(msg => {
-				msg.delete(10000);
+			message.channel.send(embed).then(message => {
+				message.delete(10000);
 			});
 
+			message.delete().then(msg =>{
+					
+			})
+
 		}
-			
-		if(!guild) return;
-			  // delete message on cats, ,s
-					if(command === "cats") {
-						// Timing
-						setTimeout(function(){
-							message.delete();
-						}, 30000);// 30 seconds
 
-					}
-			// too
-				if(command === ",s") {
-					// Timing
-					setTimeout(function(){
-						message.delete();
-					}, 30000); // 30 seconds
+		if(!guild) return; // Check guilds
+			if(command === "cats") {
+				setTimeout(function(){
+					message.delete();
+				}, 30000);// 30 seconds
 
-				}
+			}
 
+			if(command === ",s") {
+				setTimeout(function(){
+					message.delete();
+				}, 30000); // 30 seconds
 
-
+			}
 
 });
 
@@ -80,4 +104,4 @@ client.on("message", message => {
 client.on("error", (e) => console.error(e));
 
 // On login bot
-client.login("<YOUR TOKEN>");
+client.login(config.token);
