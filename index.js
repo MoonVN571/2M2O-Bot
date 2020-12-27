@@ -37,66 +37,67 @@ client.on("message", message => {
 	});
 
 	// Forked from Foundation Bot
-		// Check if channel
-		let botChat  = client.channels.get('783648498876022814');
-		let otherChat  = client.channels.get('783648482862301184');
+		
+	// Check if channel
+	let botChat  = client.channels.get('783648498876022814');
+	let otherChat  = client.channels.get('783648482862301184');
 
-		// Constructor
-		const args = message.content.slice('').trim().split(/ +/g);
-		const command = args.shift().toLowerCase();
+	// Constructor
+	const args = message.content.slice('').trim().split(/ +/g);
+	const command = args.shift().toLowerCase();
 
-		// Check guild
-		const guild = message.guild.id === '783647633457020969';
+	// Check guild
+	const guild = message.guild.id === '783647633457020969';
 
-		// On bot ping
-		if(message.isMentioned(client.user)) {
+	// On bot ping
+	if(message.isMentioned(client.user)) {
 
-			const embed = new Discord.RichEmbed()
-									.setColor(0x000DFF)
-									.setTitle('[Bot Command]')
-									.setDescription('Prefix mặt định là ' + prefix)
-									.setFooter("Dev by Moonz#0001")
-									.setTimestamp();
+		const embed = new Discord.RichEmbed()
+								.setColor(0x000DFF)
+								.setTitle('[Bot Command]')
+								.setDescription('Prefix mặc định là ' + prefix)
+								.setFooter("Dev by Moonz#0001")
+								.setTimestamp();
 
-			message.channel.send(embed).then(message => {
-				message.delete(10000);
-			});
+		message.channel.send(embed).then(message => {
+			message.delete(10000);
+		});
 
-		}
+	}
 
-		if(command === "help") {
+	if(command === "help") {
 
-			const embed = new Discord.RichEmbed()
-									.setColor(0x000DFF)
-									.setTitle('[Bot Command]')
-									.setDescription('Không có bất kì lệnh bổ sung nào.')
-									.setFooter("Dev by Moonz#0001")
-									.setTimestamp();
+		const embed = new Discord.RichEmbed()
+								.setColor(0x000DFF)
+								.setTitle('[Bot Command]')
+								.setDescription('Không có bất kì lệnh bổ sung nào.')
+								.setFooter("Dev by Moonz#0001")
+								.setTimestamp();
 
-			message.channel.send(embed).then(message => {
-				message.delete(10000);
-			});
+		message.channel.send(embed).then(message => {
+			message.delete(10000);
+		});
 
-			message.delete().then(msg =>{
+		message.delete().then(msg =>{
 					
-			})
+		})
+
+	}
+
+	if(!guild) return; // Check guilds
+		if(command === "cats") {
+			setTimeout(function(){
+				message.delete();
+			}, 30000);// 30 seconds
 
 		}
 
-		if(!guild) return; // Check guilds
-			if(command === "cats") {
-				setTimeout(function(){
-					message.delete();
-				}, 30000);// 30 seconds
+		if(command === ",s") {
+			setTimeout(function(){
+				message.delete();
+			}, 30000); // 30 seconds
 
-			}
-
-			if(command === ",s") {
-				setTimeout(function(){
-					message.delete();
-				}, 30000); // 30 seconds
-
-			}
+		}
 
 });
 
