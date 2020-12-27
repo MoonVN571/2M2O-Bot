@@ -15,11 +15,11 @@ client.on('ready', () => {
 	console.log('Bot is online!');
 
 	client.user.setPresence({
-		status: "online",
-			game: {
-			name: "RESTARTING",
-			type: "PLAYING"
-			}
+	status: "online",
+		game: {
+		name: "RESTARTING",
+		type: "PLAYING"
+		}
 	});
 
 });
@@ -29,7 +29,7 @@ client.on("message", message => {
 
 	// Status of bot
 	client.user.setPresence({
-		status: "online",
+	status: "online",
 		game: {
 		name: "2m2o.xyz",
 		type: "PLAYING"
