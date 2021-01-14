@@ -1,13 +1,24 @@
 {
   "name": "2m2o",
-  "version": "1.0",
-  "description": "Status 2m2o bot",
+  "version": "1.0.0",
+  "description": "A minecraft discordsrv bot",
   "main": "index.js",
   "dependencies": {
-    "discord.js": "^11.5.0",
+    "discord.js": "^11.6.4",
+    "dotenv": "^8.2.0"
   },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MoonVN571/2M2O-Bot.git"
+  },
+  "author": "Moonz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MoonVN571/2M2O-Bot/issues"
+  },
+  "homepage": "https://github.com/MoonVN571/2M2O-Bot#readme"
 }

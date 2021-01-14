@@ -1,5 +1,4 @@
 // 2M2O
-
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
@@ -27,7 +26,6 @@ client.on('ready', () => {
 client.on("message", message => {
 	if(message.author == client.user) return;
 
-	// Status of bot
 	client.user.setPresence({
 	status: "online",
 		game: {
@@ -35,18 +33,13 @@ client.on("message", message => {
 		type: "PLAYING"
 		}
 	});
-
-	// Forked from Foundation Bot
 		
-	// Check if channel
 	let botChat  = client.channels.get('783648498876022814');
 	let otherChat  = client.channels.get('783648482862301184');
 
-	// Constructor
 	const args = message.content.slice('').trim().split(/ +/g);
 	const command = args.shift().toLowerCase();
 
-	// Check guild
 	const guild = message.guild.id === '783647633457020969';
 
 	// On bot ping
@@ -85,19 +78,21 @@ client.on("message", message => {
 	}
 
 	if(!guild) return; // Check guilds
-		if(command === "cats") {
-			setTimeout(function(){
-				message.delete();
-			}, 30000);// 30 seconds
 
-		}
+	// Complete
+	if(command === "cats") {
+		setTimeout(function(){
+			message.delete();
+		}, 30000);
 
-		if(command === ",s") {
-			setTimeout(function(){
-				message.delete();
-			}, 30000); // 30 seconds
+	}
 
-		}
+	if(command === ",s") {
+		setTimeout(function(){
+			message.delete();
+		}, 30000);
+
+	}
 
 });
 
